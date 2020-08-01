@@ -39,6 +39,10 @@ public class PlayerController : MonoBehaviour
                 moveDirection.y = jumpForce;
             }
         }
+        if(Input.GetKeyDown(KeyCode.S) && !controller.isGrounded)
+        {
+            moveDirection.y = -jumpForce / 2;
+        }
 
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
         controller.Move(moveDirection * Time.deltaTime);
