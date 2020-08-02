@@ -7,6 +7,9 @@ public class TimeBody : MonoBehaviour
     public bool isRewinding = false;
     public float rewindTime = 10f;
 
+    [SerializeField]
+    private GameObject rewindImage;
+
     List<PointInTime> pointsInTime;
     // Start is called before the first frame update
     void Start()
@@ -32,10 +35,12 @@ public class TimeBody : MonoBehaviour
         if (isRewinding)
         {
             Rewind();
+            rewindImage.SetActive(true);
         }
         else
         {
             Record();
+            rewindImage.SetActive(false);
         }
     }
 
