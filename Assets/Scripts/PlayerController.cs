@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10;
 
     public CharacterController controller;
+    public TimeBody timeBody;
 
     private Vector3 moveDirection;
     public float gravityScale = 1.5f;
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         //rb = GetComponent<Rigidbody>();
         controller = GetComponent<CharacterController>();   
+        timeBody = GetComponent<TimeBody>();
     }
 
     // Update is called once per frame
@@ -34,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
         if(controller.isGrounded)
         {
-            if(Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W))
+            if(Input.GetKeyDown(KeyCode.W))
             {
                 moveDirection.y = jumpForce;
             }
@@ -45,7 +47,10 @@ public class PlayerController : MonoBehaviour
         }
 
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
-        controller.Move(moveDirection * Time.deltaTime);
+        if(!timeBody.IsRewinding())
+        {
+            controller.Move(moveDirection * Time.deltaTime);
+        }
     }
     
 }
