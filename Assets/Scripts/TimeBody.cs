@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class TimeBody : MonoBehaviour
 {
-    private bool isRewinding = false;
+    public bool isRewinding = false;
+    public float rewindTime = 10f;
 
-    List<Vector3> positions;
+    List<PointInTime> pointsInTime;
     // Start is called before the first frame update
     void Start()
     {
-        positions = new List<Vector3>();
+        pointsInTime = new List<PointInTime>();
     }
 
     // Update is called once per frame
@@ -40,10 +41,12 @@ public class TimeBody : MonoBehaviour
 
     void Rewind()
     {
-        if(positions.Count > 0)
+        if(pointsInTime.Count > 0)
         {
-            transform.position = positions[0];
-            positions.RemoveAt(0);
+            PointInTime pointInTime = pointsInTime[0];
+            transform.position = pointInTime.position;
+            transform.rotation = pointInTime.rotation;
+            pointsInTime.RemoveAt(0);
         }
         else
         {
@@ -53,7 +56,11 @@ public class TimeBody : MonoBehaviour
 
     void Record()
     {
-        positions.Insert(0, transform.position);
+        if(pointsInTime.Count > Mathf.Round(rewindTime / Time.fixedDeltaTime))
+        {
+            pointsInTime.RemoveAt(pointsInTime.Count - 1);
+        }
+        pointsInTime.Insert(0, new PointInTime(transform.position, transform.rotation));
     }
 
     public void StartRewind()
