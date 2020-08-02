@@ -10,6 +10,12 @@ public class DoorTrigger : MonoBehaviour
     [SerializeField]
     Transform target;
 
+    [SerializeField]
+    Transform plateTarget;
+    
+    [SerializeField]
+    Transform unpressedButton;
+
     public float speed = 0.025f;
 
     public bool isTriggered = false;
@@ -19,12 +25,22 @@ public class DoorTrigger : MonoBehaviour
     {
         isTriggered = true;
     }
+
+    void OnTriggerExit(Collider col)
+    {
+        isTriggered = false;
+    }
     
     void Update()
     {
         if(isTriggered)
         {
             door.transform.position = Vector3.MoveTowards(door.transform.position, target.position, speed);
+            transform.position = Vector3.MoveTowards(transform.position, plateTarget.position, speed);
+        }
+        else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, unpressedButton.position, speed);
         }
     }
 }
