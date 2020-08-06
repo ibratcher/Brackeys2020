@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class TimeBody : MonoBehaviour
@@ -8,7 +7,7 @@ public class TimeBody : MonoBehaviour
     public float rewindTime = 10f;
 
     [SerializeField]
-    private GameObject rewindImage;
+    private GameObject rewindImage = null;
 
     List<PointInTime> pointsInTime;
     // Start is called before the first frame update

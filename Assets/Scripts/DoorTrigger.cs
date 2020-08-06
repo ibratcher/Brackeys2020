@@ -1,20 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DoorTrigger : MonoBehaviour
 {
     [SerializeField]
-    GameObject door;
+    GameObject door = null;
 
     [SerializeField]
-    Transform target;
+    Transform target = null;
 
     [SerializeField]
-    Transform plateTarget;
+    Transform plateTarget = null;
     
     [SerializeField]
-    Transform unpressedButton;
+    Transform unpressedButton = null;
 
     public float speed = 0.025f;
 
