@@ -4,7 +4,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
-    public GameObject levelCompleteText = null;
+    
+    [SerializeField]
+    private GameObject levelCompleteText = null;
 
     private float resetDelay = 2;
 
