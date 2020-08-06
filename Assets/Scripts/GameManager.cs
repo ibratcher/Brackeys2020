@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
     public GameObject levelCompleteText = null;
 
-    public float resetDelay;
+    private float resetDelay = 2;
 
     void Awake()
     {
@@ -25,7 +25,6 @@ public class GameManager : MonoBehaviour
         levelCompleteText.SetActive(true);
         Time.timeScale = .5f;
         Invoke("Reset", resetDelay);
-        //Reset the scene
     }
 
     public void Reset()

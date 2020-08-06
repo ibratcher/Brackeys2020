@@ -384,6 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelCompleteText: {fileID: 1552799489}
+  resetDelay: 2
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
