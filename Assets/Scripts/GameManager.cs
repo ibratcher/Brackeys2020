@@ -8,7 +8,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject levelCompleteText = null;
 
-    private float resetDelay = 2;
+    private float resetDelay = 1;
+
+    public LevelChanger fade;
 
     void Awake()
     {
@@ -26,16 +28,13 @@ public class GameManager : MonoBehaviour
     {
         levelCompleteText.SetActive(true);
         Time.timeScale = .5f;
+        fade.Fade();
         Invoke("Reset", resetDelay);
     }
 
     public void Reset()
     {
         Time.timeScale = 1f;
-        if(SceneManager.GetActiveScene().name == "LevelOne")
-        {
-            SceneManager.LoadScene("LevelTwo");
-        }
         switch (SceneManager.GetActiveScene().name)
         {
             case "LevelOne":
