@@ -1,13 +1,15 @@
 ﻿ using UnityEngine;
+ using UnityEngine.SceneManagement;
  
  public class Music : MonoBehaviour
  {
      private AudioSource audioSource;
      private void Awake()
      {
-         DontDestroyOnLoad(transform.gameObject);
-         audioSource = GetComponent<AudioSource>();
+        DontDestroyOnLoad(transform.gameObject);
+        audioSource = GetComponent<AudioSource>();
      }
+
  
      public void PlayMusic()
      {
