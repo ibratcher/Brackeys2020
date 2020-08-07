@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 10;
     public float jumpForce = 10;
+    private Animator animator;
 
     public CharacterController controller;
     public TimeBody timeBody;
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         //rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();   
         timeBody = GetComponent<TimeBody>();
     }
@@ -32,6 +34,9 @@ public class PlayerController : MonoBehaviour
 
         moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, moveDirection.y, moveDirection.z);
 
+        //animator.SetBool("IsMoving", IsMoving());
+
+        //animator.SetBool("IsGrounded", controller.isGrounded);
         if(controller.isGrounded)
         {
             if(Input.GetKeyDown(KeyCode.W))
@@ -49,6 +54,15 @@ public class PlayerController : MonoBehaviour
         {
             controller.Move(moveDirection * Time.deltaTime);
         }
+    }
+
+    public bool IsMoving()
+    {
+        if(Input.GetAxis("Horizontal") != 0)
+        {
+            return true;
+        }
+        return false;
     }
     
 }
