@@ -32,6 +32,25 @@ public class GameManager : MonoBehaviour
     public void Reset()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if(SceneManager.GetActiveScene().name == "LevelOne")
+        {
+            SceneManager.LoadScene("LevelTwo");
+        }
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "LevelOne":
+            SceneManager.LoadScene("LevelTwo");
+            break;
+
+            case "LevelTwo":
+            SceneManager.LoadScene("LevelThree");
+            break;
+
+            default:
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            break;
+            
+        }
+            
     }
 }

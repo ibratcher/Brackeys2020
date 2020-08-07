@@ -60,10 +60,6 @@ public class TimeBody : MonoBehaviour
 
     void Record()
     {
-        if(pointsInTime.Count > Mathf.Round(rewindTime / Time.fixedDeltaTime))
-        {
-            pointsInTime.RemoveAt(pointsInTime.Count - 1);
-        }
         pointsInTime.Insert(0, new PointInTime(transform.position, transform.rotation));
     }
 
