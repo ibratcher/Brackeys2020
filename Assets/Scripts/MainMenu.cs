@@ -5,22 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void Awake()
+    public void Start()
     {
-        try
-        {
-            GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().StopMusic();
-        }
-        catch
-        {
-            //Placeholder
-        }
-
+        GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().PlayMenuMusic();
     }
     public void PlayGame()
     {
         SceneManager.LoadScene("LevelOne");
-        GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().PlayMusic();
+        GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().PlayMainMusic();
     }
 
     public void QuitGame()
@@ -28,4 +20,14 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void OpenCredits()
+    {
+        SceneManager.LoadScene("Credits");
+        GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().PlayMenuMusic();
+    }
+
+    public void ExitCredits()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 }

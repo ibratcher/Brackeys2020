@@ -39,17 +39,17 @@ public class GameManager : MonoBehaviour
         {
             case "LevelOne":
             SceneManager.LoadScene("LevelTwo");
-            GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().PlayMusic();
+            GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().PlayMainMusic();
             break;
 
             case "LevelTwo":
             SceneManager.LoadScene("LevelThree");
-            GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().PlayMusic();
+            GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().PlayMainMusic();
             break;
 
             default:
             SceneManager.LoadScene("Menu");
-            GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().PlayMusic();
+            GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().PlayMenuMusic();
             break;
             
         }

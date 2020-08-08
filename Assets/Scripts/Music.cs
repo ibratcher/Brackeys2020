@@ -3,22 +3,54 @@
  
  public class Music : MonoBehaviour
  {
-     private AudioSource audioSource;
-     private void Awake()
-     {
-        DontDestroyOnLoad(transform.gameObject);
-        audioSource = GetComponent<AudioSource>();
-     }
+    private AudioSource music;
+    
+    [SerializeField]
+    private AudioClip menuMusic;
+
+    [SerializeField]
+    private AudioClip mainGameMusic;
+
+    
+    private void Awake()
+    {
+        if (GameObject.FindGameObjectsWithTag("Music").Length <= 1)
+        {
+            DontDestroyOnLoad(transform.gameObject);
+        }
+        music = GetComponent<AudioSource>();
+    }
 
  
-     public void PlayMusic()
-     {
-         if (audioSource.isPlaying) return;
-         audioSource.Play();
-     }
+    public void PlayMainMusic()
+    {
+        if(music.clip == mainGameMusic)
+        {
+            return;
+        }
+        else
+        {
+            music.clip = mainGameMusic;
+            music.Play();
+        }
+    }
+
+    public void PlayMenuMusic()
+    {
+        if(music.clip == menuMusic)
+        {
+            return;
+        }
+        else
+        {
+            music.clip = menuMusic;
+            music.Play();
+        }
+        
+    }
  
-     public void StopMusic()
-     {
-         audioSource.Stop();
-     }
+    public void StopMusic()
+    {
+        music.Stop();
+    }
  }
