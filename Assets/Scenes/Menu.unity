@@ -1148,7 +1148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b6116c734a46d4ea8bd1f0650e9dc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuMusic: {fileID: 8300000, guid: 349e6b9ba244aa34b81f81896d8f0449, type: 3}
+  menuMusic: {fileID: 8300000, guid: b2ed72cfbe0193d4da228b8b725749df, type: 3}
   mainGameMusic: {fileID: 8300000, guid: f072b6924bef6a649b1abd185ee752de, type: 3}
 --- !u!82 &1661660045
 AudioSource:
