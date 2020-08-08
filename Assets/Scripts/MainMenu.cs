@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
         {
             GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().StopMusic();
         }
-        finally
+        catch
         {
             //Placeholder
         }

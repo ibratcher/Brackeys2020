@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: f4b1edea77120cf47bd4476a91d622a9
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Rawengulk
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e1c9f4f8ea7eea04086a12beae625db9, type: 3}
+  - {fileID: 12800000, guid: c145922bd8e29b6499968e5a1c7c0e0f, type: 3}
+  - {fileID: 12800000, guid: 72fb04ac7b17f3040bef63e51f674020, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

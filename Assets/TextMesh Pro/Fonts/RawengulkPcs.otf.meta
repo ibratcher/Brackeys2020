@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: b5bc4c633aad54e4d8527d807b1de027
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - RawengulkPcs
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 539d749a983b72446ae8298ac07b09fc, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
